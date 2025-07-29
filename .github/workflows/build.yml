@@ -26,14 +26,14 @@ jobs:
       uses: actions/checkout@v4
       
     - name: Set up JDK 11
-      uses: actions/setup-java@v3
+      uses: actions/setup-java@v4
       with:
         java-version: '11'
         distribution: 'temurin'
         cache: gradle
         
     - name: Set up Android SDK
-      uses: android-actions/setup-android@v2
+      uses: android-actions/setup-android@v3
       with:
         sdk-platform: '34'
         sdk-build-tools: '34.0.0'
@@ -42,7 +42,7 @@ jobs:
       run: chmod +x gradlew
       
     - name: Cache Gradle packages
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: |
           ~/.gradle/caches
@@ -58,13 +58,13 @@ jobs:
       run: ./gradlew assembleRelease
       
     - name: Upload Debug APK
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: AudioPlayerApp-debug
         path: app/build/outputs/apk/debug/app-debug.apk
         
     - name: Upload Release APK
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: AudioPlayerApp-release
         path: app/build/outputs/apk/release/app-release.apk
