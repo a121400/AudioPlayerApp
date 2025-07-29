@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data-extraction-rules>
+    <cloud-backup>
+        <!-- Exclude audio files from cloud backup -->
+        <exclude domain="file" path="ZA_SXD_CN/"/>
+        <exclude domain="file" path="audio_covers/"/>
+    </cloud-backup>
+    <device-transfer>
+        <!-- Allow device transfer for all data -->
+        <include domain="file" path="."/>
+    </device-transfer>
+</data-extraction-rules> 
